@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rods</title>
+  <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
+  <!-- <link href="stylesheets/style.css" rel="stylesheet"> -->
+  <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <h1>Rods</h1>
+  <p>Welcome to the Rods Page</p>
+  <a href="/">Home</a>
+  <hr>
+  <div class="container">
+    <button id="test">Test</button>
+
+    <div class="row">
+      <div class="col-md-4">
+        <!-- make this templated from server data -->
+        <% for ( var i = 0; i < brands.length; i++) { %>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="brand" value="<%= brands[i].substring(brands[i].indexOf(" ") - 2), brands[i].length %>" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              <%= brands[i] %>
+            </label>
+          </div>
+        <% } %>
+
+      </div>
+
+      <% for (var i = 0; i < results.length; i++) { %>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="<%= results[i].img_src %>">
+          <div class="caption">
+            <h3><%= results[i].brand %></h3>
+            <p><%= results[i].name %></p>
+            <p><%= results[i].category %></p>
+            <p><%= results[i].price %></p>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <% if (total.pages > 0) { %>
+    <ul class="pagination text-center">
+      <% if (current.page == 1) { %>
+      <li class="disabled"><a>First</a></li>
+      <% } else { %>
+      <li><a href="/rods2?page=1&limit=10&category=<%= params.category %>&brand=<%= params.brand %>&search=<%= params.search %>">First</a></li>
+      <% } %>
+      <% var i = (current.page > 5 ? current.page - 4 : 1) %>
+      <% if (i !== 1) { %>
+      <li class="disabled"><a>...</a></li>
+      <% } %>
+      <% for (; i <= (current.page + 4) && i <= total.pages; i++) { %>
+      <% if (i == current.page) { %>
+      <li class="active"><a><%= i %></a></li>
+      <% } else { %>
+      <li><a href="/rods2?page=<%= i %>&limit=10&category=<%= params.category %>&brand=<%= params.brand %>&search=<%= params.search %>"><%= i %></a></li>
+      <% } %>
+      <% if (i == current.page + 4 && i < total.pages) { %>
+      <li class="disabled"><a>...</a></li>
+      <% } %>
+      <% } %>
+      <% if (current.page == total.pages) { %>
+      <li class="disabled"><a>Last</a></li>
+      <% } else { %>
+      <li><a href="/rods2?page=<%= total.pages %>&limit=10&category=<%= params.category %>&brand=<%= params.brand %>&search=<%= params.search %>">Last</a></li>
+      <% } %>
+    </ul>
+    <% } %>
+  </div>
+  <!--
+  <div id="filter-div">
+    <form action="#" id="filter-category">
+      <span>Category</span>
+      <p>
+        <label>
+          <input class="with-gap" name="category" type="checkbox" value="Fly" checked />
+          <span>Fly</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input class="with-gap" name="category" type="checkbox" value="Freshwater" />
+          <span>Freshwater</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input class="with-gap" name="category" type="checkbox" value="Saltwater" />
+          <span>Saltwater</span>
+        </label>
+      </p>
+    </form>
+-->
+  <!--
+
+    <p>Search<input type="text" id="search-bar" /></p>
+
+    <button id="filter" class="btn">Apply Filter</button>
+  </div>
+  <hr>
+  <button id="load" class="btn">Load More</button>
+  <div id="data"></div>
+-->
+
+
+  <script src="js/rods2.js"></script>
+</body>
+
+</html>

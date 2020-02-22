@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rig Your Rod</title>
+  <%- include ('partials/product_head') %>
+</head>
+
+<body>
+  <%- include ('partials/navbar') %>
+
+  <section class="text-center" id="hero">
+    <h1 id="head-title" class="text-center">Build Your Own Rod Combo</h1>
+    <p id="head-text" class="text-center">Choose from your favorite products</p>
+    <a href="/builder"><button id="head-btn" class="justify-content-center">Build Now</button></a>
+    <img src="/img/parallax/trans_reel.png" class="reel rellax" data-rellax-speed="3">
+    <img src="/img/parallax/trans-rod.png" class="rod rellax" data-rellax-speed="-3">
+    <img src="/img/parallax/trans-line2.png" class="line rellax" data-rellax-speed="-2">
+
+  </section>
+
+  <section>
+    <h2 id="section2-title" class="my-5 text-center">How It Works</h2>
+
+    <div class="row justify-content-center align-self-center">
+      <div class="card-deck col-lg-10 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="card home-card px-3">
+          <div class="card-body flex-column d-flex">
+            <h5 class="card-title home-title">Choose From Products</h5>
+            <p class="card-text home-text">Choose from some of your favorite name brand fishing gear and equipment. With more than 4,000 products, you'll find the right rod, reel, and line for your combo.</p>
+            <a class="btn-card mt-auto text-center" href="/rods3#page=1">Choose Products</a>
+          </div>
+        </div>
+        <div class="card home-card px-3">
+          <div class="card-body flex-column d-flex">
+            <h5 class="card-title home-title">Rig Your Combo</h5>
+            <p class="card-text home-text">After selecting the gear you want, you can name your combo and upload a picture that highlights your new setup.</p>
+            <a class="btn-card mt-auto text-center" href="/builder">Rig your combo</a>
+          </div>
+        </div>
+        <div class="card home-card px-3">
+          <div class="card-body flex-column d-flex">
+            <h5 class="card-title home-title">Share With Fellow Anglers</h5>
+            <p class="card-text home-text">After uploading your new rod setup, you can share your rod combo or explore the combos of other anglers.</p>
+            <a class="btn-card mt-auto text-center" href="/feed?page=1&limit=10">Share</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="mt-5 pt-5 pb-5 footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-xs-12 about-company">
+            <!-- <h2>Brand name</h2> -->
+            <img src="/img/logotext.png" width="250" height="125" class="d-inline-block align-top" alt="">
+          </div>
+          <div class="col-lg-3 col-xs-12 links my-3">
+            <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+            <ul class="m-0 p-0">
+              <li><a href="/">Home</a></li>
+              <li><a href="/builder">Rod Builder</a></li>
+              <li><a href="/rods#page=1">Rods</a></li>
+              <li><a href="/reels#page=1">Reels</a></li>
+              <li><a href="/lines#page=1">Lines</a></li>
+              <li><a href="/feed?page=1&limit=10">Completed Rods</a></li>
+              <li><a href="/profile">Profile</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Sign up</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-xs-12 location my-3">
+            <h4 class="mt-lg-0 mt-sm-4">Contact</h4>
+            <p><i class="far fa-envelope mr-3"></i>rodriggerwebsite@gmail.com</p>
+            <p><a href="https://www.facebook.com/Rod-Rigger-102605408009440/" target="_blank"><i class="fab fa-facebook-f mr-3"></i>Rod Rigger</a></p>
+            <p><a href="https://www.instagram.com/rod_rigger/" target="_blank"><i class="fab fa-instagram mr-3"></i>@rod_rigger</a></p>
+            <p><a href="https://www.reddit.com/user/rodrigger" target="_blank"><i class="fab fa-reddit mr-3"></i>U/rodrigger</a></p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col copyright">
+            <p class=""><small class="text-white-50">© 2020. All Rights Reserved.</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.7.1/rellax.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+    var rellax = new Rellax('.rellax');
+  </script>
+</body>
+
+</html>

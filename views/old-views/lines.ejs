@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lines</title>
+  <!--<link rel='stylesheet' href='./style.css'>-->
+  <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
+  <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+  <h1>Lines</h1>
+  <p>Welcome to the Lines Page</p>
+
+  <a href="/">Home</a>
+  <hr>
+  <div id="filter-div">
+    <form action="#" id="filter-category">
+      <span>Category</span>
+      <p>
+        <label>
+          <input class="with-gap" name="category" type="checkbox" value="Fly" checked />
+          <span>Fly</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input class="with-gap" name="category" type="checkbox" value="Freshwater" />
+          <span>Freshwater</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input class="with-gap" name="category" type="checkbox" value="Saltwater" />
+          <span>Saltwater</span>
+        </label>
+      </p>
+    </form>
+
+    <form action="#" id="filter-brand">
+      <span>Brand</span>
+  </form>
+  <p>Search<input type="text" id="search-bar" /></p>
+    <button id="filter" class="btn">Apply Filter</button>
+  </div>
+  <hr>
+  <button id="load" class="btn">Load More</button>
+  <div id="data"></div>
+
+
+
+  <script src="js/lines.js"></script>
+  <script></script>
+</body>
+
+</html>

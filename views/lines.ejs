@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lines & Leaders</title>
+  <%- include ('partials/product_head') %>
+</head>
+
+<body>
+
+  <!-- ========= NAV BAR ============= -->
+<%- include ('partials/navbar') %>
+<h3 id="product-title" class="text-center bold-font py-5">Lines & Leaders</h3>
+
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-start">
+    <div class="col-lg-2 col-md-12 filter-container my-3 shadow-sm">
+      <hr>
+      <%- include ('partials/linecategory') %>
+
+      <hr>
+      <h6>BRANDS</h6>
+      <div id="filters"></div>
+      <hr>
+    </div>
+
+    <div class="col-lg-9">
+      <div class="search-bar py-3">
+        <input id="search" class="form-control" type="text" placeholder="Search">
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="output"></div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div id="pagination" class="my-5"></div>
+  </div>
+</div> <!-- container -->
+<%- include ('partials/product') %>
+<%- include ('partials/filters') %>
+<%- include ('partials/pagination') %>
+<%- include ('partials/footer') %>
+
+  <script src="js/handlebars.js"></script>
+  <script src="js/lines.js"></script>
+
+</body>
+
+</html>

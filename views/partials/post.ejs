@@ -1,0 +1,19 @@
+<% for(var i = 0; i < results.length; i++) { %>
+<div class="col mb-4">
+  <div class="card h-100 shadow-sm product-card" style="min-width: 17rem;">
+    <div class="card-header post-head">
+      <h5 class="card-title"><%= results[i].username %></h5>
+    </div>
+    <img class="card-img-top" src="image/<%= results[i].build_img %>" alt="No Image Found" style="height: 20em;">
+    <div class="card-body">
+      <h5 class="card-title"><%= results[i].build_name %></h5>
+      <p class="card-text"><%= results[i].build.rod.name %></p>
+      <p class="card-text"><%= results[i].build.reel.name %></p>
+      <p class="card-text"><%= results[i].build.line.name %></p>
+      <p class="card-text">$<%= results[i].min_price %> - $<%= results[i].max_price %></p>
+      <a class="card-link btn btn-buy" href="/combo/<%= results[i].uid %>">View</a>
+    </div>
+
+  </div>
+</div>
+<% } %>

@@ -1,0 +1,22 @@
+<script id="product-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <div class="col mb-4">
+      <div class="card h-100 shadow-sm product-card" style="min-width: 17rem;">
+        <img class="card-img-top" src="{{this.img_src}}" alt="No Image Found">
+        <div class="card-body">
+          <h5 class="card-title">{{this.brand}}</h5>
+          <p class="card-text">{{this.name}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{this.price}}</li>
+          <li class="list-group-item">{{this.category}}</li>
+        </ul>
+        <div class="card-body">
+          <button class="btn btn-add card-link add">Add to Build</button>
+          <a href="{{this.href}}" target="_blank" class="card-link link btn btn-buy">Buy</a>
+        </div>
+      </div>
+    </div>
+
+  {{/each}}
+</script>

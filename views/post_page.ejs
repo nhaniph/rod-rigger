@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Post Page</title>
+  <%- include ('partials/product_head') %>
+</head>
+
+<body>
+  <%- include ('partials/navbar') %>
+  <div id="build-title" class=" py-5">
+    <h6 class="text-center dark-blue text-uppercase">Rod Combo</h6>
+    <h3 class="text-center bold-font"><%= results[0].build_name %></h3>
+    <h5 class="text-center">By <%= results[0].username %></h5>
+  </div>
+
+  <div class="container-fluid my-4">
+    <div class="row justify-content-center align-items-start">
+      <div class="col-xl-6 col-lg-8 col-md-8">
+        <div class="card text-white shadow-sm my-3">
+          <img class="card-img" src="/image/<%= results[0].build_img %>">
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-start my-3">
+      <div class="col-xl-6 col-lg-8 col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text" id="post-link"><i class="fas fa-link px-2"></i> website.com/combo/<%= results[0].uid %><a class="float-right" data-toggle="tooltip" id="copy">Copy</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-start my-3">
+      <div class="col-xl-6 col-lg-8 col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text"><%= results[0].build.rod.name %><a class="float-right" href="<%= results[0].build.rod.href %>" target="_blank">Buy</a></p>
+            <p class="card-text"><%= results[0].build.reel.name %><a class="float-right" href="<%= results[0].build.reel.href %>" target="_blank">Buy</a></p>
+            <p class="card-text"><%= results[0].build.line.name %><a class="float-right" href="<%= results[0].build.line.href %>" target="_blank">Buy</a></p>
+            <hr>
+            <p class="card-text">$<%= results[0].min_price %> - $<%= results[0].max_price %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+<script src="/js/post_page.js"></script>
+</body>
+
+</html>

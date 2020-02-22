@@ -1,0 +1,14 @@
+<script id="filter-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <div class="form-check">
+      {{#this.oneWrd}}
+        <input type="checkbox" class="form-check-input checkbox brand" id="exampleCheck1" value="{{this.brand}}">
+        <label class="form-check-label" for="exampleCheck1">{{this.brand}}</label>
+      {{/this.oneWrd}}
+      {{^this.oneWrd}}
+        <input type="checkbox" class="form-check-input checkbox brand" id="exampleCheck1" value="{{this.value}}">
+        <label class="form-check-label" for="exampleCheck1">{{this.brand}}</label>
+      {{/this.oneWrd}}
+    </div>
+  {{/each}}
+</script>

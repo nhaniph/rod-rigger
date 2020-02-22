@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Rod Builder</title>
+      <%- include ('partials/product_head') %>
+   </head>
+   <body>
+      <%- include ('partials/navbar') %>
+      <h3 id="build-title" class="text-center bold-font py-5">Create Your Rod</h3>
+      <form action="/post" method="POST" enctype="multipart/form-data" class="form-container">
+         <div class="row py-3 justify-content-center">
+            <div class="col-lg-5">
+               <div class="input-group my-2">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text prepend-bg" id="rod-name">Rod Name</span>
+                  </div>
+                  <input required type="text" name="name" class="form-control" placeholder="">
+               </div>
+            </div>
+            <div class="col-lg-5">
+               <div class="input-group mb-3 my-2">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text prepend-bg">Choose an Image</span>
+                  </div>
+                  <div class="custom-file">
+                     <input required type="file" class="custom-file-input" name="file" id="file">
+                     <label class="custom-file-label" for="file"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- ROD CONTENT -->
+         <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 align-items-center mx-3">
+            <% if (data.build.rod.name) { %>
+            <div class="col mb-4" id="rod">
+               <div class="card h-100 shadow-sm build-card">
+                  <h5 class="card-title text-center py-2 top-card">Rod</h5>
+                  <img class="card-img-bottom" src="<%= data.build.rod.img_src %>" alt="Card image cap" style="max-height: 20em;">
+                  <div class="card-body text-center">
+                     <p class="card-text"><%= data.build.rod.name %></p>
+                     <p class="card-text"><%= data.build.rod.brand %></p>
+                     <p class="card-text">$<%= data.build.rod.minPrice %> - $<%= data.build.rod.maxPrice %></p>
+                     <button class="btn btn-add card-link add">Change</button>
+                     <a href="<%= data.build.rod.href %>" target="_blank" class="card-link btn btn-buy">Buy</a>
+                     <button class="btn btn-remove card-link remove">Remove</button>
+                  </div>
+               </div>
+            </div>
+            <% } else { %>
+            <div class="col mb-4 text-center" id="rod">
+               <div class="card h-100 shadow-sm build-card">
+                  <h5 class="card-title text-center py-2 top-card">Rod</h5>
+                  <div class="card-body py-5 my-4">
+                     <p class="card-text">Choose your favorite rod to go with your perfect rod combo!</p>
+                     <a class="btn btn-choose card-link my-3" href="/rods#page=1">Choose a rod</a>
+                  </div>
+               </div>
+            </div>
+            <% } %>
+            <% if (data.build.reel.name) { %>
+            <div class="col mb-4" id="reel">
+               <div class="card h-100 shadow-sm build-card">
+                  <h5 class="card-title text-center py-2 top-card">Reel</h5>
+                  <img class="card-img-bottom" src="<%= data.build.reel.img_src %>" alt="Card image cap" style="max-height: 20em;">
+                  <div class="card-body text-center">
+                     <p class="card-text"><%= data.build.reel.name %></p>
+                     <p class="card-text"><%= data.build.reel.brand %></p>
+                     <p class="card-text">$<%= data.build.reel.minPrice %> - $<%= data.build.reel.maxPrice %></p>
+                     <button class="btn btn-add card-link add">Change</button>
+                     <a href="<%= data.build.reel.href %>" target="_blank" class="card-link btn btn-buy">Buy</a>
+                     <button class="btn btn-remove card-link remove">Remove</button>
+                  </div>
+               </div>
+            </div>
+            <% } else { %>
+            <div class="col mb-4 text-center" id="reel">
+               <div class="card h-100 shadow-sm build-card">
+                  <h5 class="card-title text-center py-2 top-card">Reel</h5>
+                  <div class="card-body py-5 my-4">
+                     <p class="card-text">Choose your favorite reel to go with your perfect rod combo!</p>
+                     <a class="btn btn-choose card-link my-3" href="/reels#page=1">Choose a reel</a>
+                  </div>
+               </div>
+            </div>
+            <% } %>
+            <% if (data.build.line.name) { %>
+            <div class="col mb-4" id="line">
+               <div class="card h-100 shadow-sm build-card">
+                  <h5 class="card-title text-center py-2 top-card">Line/Leader</h5>
+                  <img class="card-img-bottom" src="<%= data.build.line.img_src %>" alt="Card image cap" style="max-height: 20em;">
+                  <div class="card-body text-center">
+                     <p class="card-text"><%= data.build.line.name %></p>
+                     <p class="card-text"><%= data.build.line.brand %></p>
+                     <p class="card-text">$<%= data.build.line.minPrice %> - $<%= data.build.line.maxPrice %></p>
+                     <button class="btn btn-add card-link add">Change</button>
+                     <a href="<%= data.build.line.href %>" target="_blank" class="card-link btn btn-buy">Buy</a>
+                     <button class="btn btn-remove card-link remove">Remove</button>
+                  </div>
+               </div>
+            </div>
+            <% } else { %>
+            <div class="col mb-4 text-center" id="line">
+               <div class="card h-100 shadow-sm build-card">
+                  <h5 class="card-title text-center py-2 top-card">Line/Leader</h5>
+                  <div class="card-body py-5 my-4">
+                     <p class="card-text">Choose your favorite line/leader to go with your perfect rod combo!</p>
+                     <a class="btn btn-choose card-link my-3" href="/lines#page=1">Choose a line/leader</a>
+                  </div>
+               </div>
+            </div>
+            <% } %>
+         </div>
+         <div class="col text-center my-2">
+            <input type="submit" value="Submit" class="btn btn-add">
+         </div>
+      </form>
+      <%- include ('partials/footer') %>
+      <script id="rod-build-template" type="text/x-handlebars-template">
+         <div class="card h-100 shadow-sm build-card text-center">
+           <h5 class="card-title text-center py-2 top-card">Rod</h5>
+           <div class="card-body py-5 my-4">
+             <p class="card-text">Choose your favorite rod to go with your perfect rod combo!</p>
+             <a class="btn btn-choose card-link my-3" href="/rods#page=1">Choose a rod</a>
+           </div>
+         </div>
+      </script>
+      <script id="reel-build-template" type="text/x-handlebars-template">
+         <div class="card h-100 shadow-sm build-card text-center">
+           <h5 class="card-title text-center py-2 top-card">Reel</h5>
+           <div class="card-body py-5 my-4">
+             <p class="card-text">Choose your favorite reel to go with your perfect rod combo!</p>
+             <a class="btn btn-choose card-link my-3" href="/reels#page=1">Choose a reel</a>
+           </div>
+         </div>
+      </script>
+      <script id="line-build-template" type="text/x-handlebars-template">
+         <div class="card h-100 shadow-sm build-card text-center">
+           <h5 class="card-title text-center py-2 top-card">Line/Leader</h5>
+           <div class="card-body py-5 my-4">
+             <p class="card-text">Choose your favorite line/leader to go with your perfect rod combo!</p>
+             <a class="btn btn-choose card-link my-3" href="/lines#page=1">Choose a line/leader</a>
+           </div>
+         </div>
+      </script>
+      <script src="js/handlebars.js"></script>
+      <script src="js/builder.js"></script>
+   </body>
+</html>

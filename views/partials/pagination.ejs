@@ -1,0 +1,32 @@
+<script id="page-template" type="text/x-handlebars-template">
+
+  {{#total.notZero}}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        {{#current.firstPage}}
+          <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">First</a></li>
+        {{/current.firstPage}}
+        {{^current.firstPage}}
+          <li class="page-item"><a class="page-link" href="#page=1">First</a></li>
+        {{/current.firstPage}}
+        {{#each current.range}}
+          <!-- need an if statement to check if value in array is equal to current page -->
+          {{#this.isCurrent}}
+            <li class="page-item active"><a class="page-link" href="#page={{this.page}}">{{this.page}}</a></li>
+          {{/this.isCurrent}}
+          {{^this.isCurrent}}
+            <li class="page-item"><a class="page-link" href="#page={{this.page}}">{{this.page}}</a></li>
+          {{/this.isCurrent}}
+        {{/each}}
+        {{#current.lastPage}}
+          <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Last</a></li>
+        {{/current.lastPage}}
+        {{^current.lastPage}}
+          <li class="page-item"><a class="page-link" href="#page={{total.pages}}">Last</a></li>
+        {{/current.lastPage}}
+      </ul>
+    </nav>
+  {{/total.notZero}}
+
+
+</script>

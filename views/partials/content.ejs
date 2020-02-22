@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-start">
+    <div class="col-lg-2 col-md-12 filter-container my-3 shadow-sm">
+      <hr>
+      <h6>CATEGORY</h6>
+      <div id="categories">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input checkbox category" id="saltwater" value="saltwater">
+          <label class="form-check-label" for="saltwater">Saltwater</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input checkbox category" id="freshwater" value="freshwater">
+          <label class="form-check-label" for="freshwater">Freshwater</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input checkbox category" id="fly" value="fly">
+          <label class="form-check-label" for="fly">Fly</label>
+        </div>
+      </div>
+
+      <hr>
+      <h6>BRANDS</h6>
+      <div id="filters"></div>
+      <hr>
+    </div>
+
+    <div class="col-lg-9">
+      <div class="search-bar py-3">
+        <input id="search" class="form-control" type="text" placeholder="Search">
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="output"></div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div id="pagination"></div>
+  </div>
+</div> <!-- container -->
